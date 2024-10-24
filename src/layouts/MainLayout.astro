@@ -1,0 +1,29 @@
+---
+import MainNav from "@/components/MainNav.astro";
+import { ViewTransitions } from "astro:transitions";
+---
+
+<html lang="es">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<ViewTransitions />
+		<title>Alexis Chef</title>
+	</head>
+	<body class="bg-[url('/alexis.png')] bg-no-repeat h-lvh bg-left-bottom bg-auto">
+		<main class="container mx-auto ">
+			<MainNav />
+		<section class="p-8">
+			<slot />
+		</section>
+		</main>
+	</body>
+</html>
+<style is:global>
+	h1 {
+		@apply text-slate-900 text-2xl font-semibold mb-4;
+	}
+
+</style>

@@ -1,0 +1,27 @@
+--- 
+interface Props {
+  checked?: boolean,
+  enlace?: string,
+  caracteristicas?: string[],
+
+}
+
+const { checked=false, enlace, caracteristicas } = Astro.props
+---
+
+<div class="collapse bg-base-200 mb-4">
+  <input type="radio" name="my-accordion-1"  checked={checked ? "checked" : ""} />
+  <div class="collapse-title text-xl font-medium">{enlace}</div>
+  <div class="collapse-content">
+    <div>
+      { caracteristicas && (
+        <ul>
+        { caracteristicas.map(caracteristica => <li>{caracteristica}</li>) }
+        
+      </ul>
+      ) }
+    </div>
+
+    <a href={enlace} target="_blank" class="btn btn-primary mt-12">Visitar</a>
+  </div>
+</div>

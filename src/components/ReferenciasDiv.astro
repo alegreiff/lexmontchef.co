@@ -1,0 +1,18 @@
+---
+import MenuRefs from "./MenuRefs.astro";
+import Tools from "./Tools.astro";
+
+interface contenido {
+  contenido: string;
+}
+const { contenido } = Astro.props as contenido
+---
+
+<div class="flex gap-2 flex-row ">
+  <MenuRefs/>
+    <Tools>
+      <slot name="tool"></slot>
+    </Tools>
+      
+    
+  </div>

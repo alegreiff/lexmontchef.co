@@ -1,0 +1,57 @@
+---
+const menuElementos = [
+  {
+    href: "/recetas",
+    text: "Recetas",
+    text_2: "de autor",
+  },
+  {
+    href: "/eventos",
+    text: "Eventos",
+    text_2: null,
+  },
+  {
+    href: "/clases",
+    text: "Clases",
+    text_2: "de cocina",
+  },
+  {
+    href: "/chef",
+    text: "Private",
+    text_2: "chef at home",
+  },
+  {
+    href: "/experiences",
+    text: "Gastronomy",
+    text_2: "experiences in town",
+  },
+  {
+    href: "/contexto",
+    text: "Contexto",
+    text_2: "generalidades",
+  },
+]
+---
+<div class="navbar bg-slate-100">
+  <div class="flex-1">
+    <a href="/" class="btn btn-ghost hover:bg-transparent text-xl">lexmontchef.co</a>
+  </div>
+  <div class="flex-none">
+    <ul class="menu menu-horizontal px-1 flex gap-4">
+      { menuElementos.map((item) => (
+        <li>
+        <a href={item.href} class="btn btn-ghost hover:bg-slate-200">
+          <div class="h-12 font-bold flex flex-col justify-center place-content-center">
+            <span class="block">{item.text}</span> 
+            { item.text_2 && <span class="block font-extralight">{item.text_2}</span> }
+          </div>
+        </a>
+      </li>
+        ))}
+
+      
+      
+      
+    </ul>
+  </div>
+</div>
